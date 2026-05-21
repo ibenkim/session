@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A macOS-style interactive resume." />
+  <title>Resume.app — Your Name</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!--
+    Edit the content of each .window below to personalize the resume.
+    Sections marked with [EDIT] are intended to be replaced with your details.
+  -->
+</head>
+<body>
+  <!-- ============================================================
+       Top Menu Bar (macOS-style)
+       ============================================================ -->
+  <header class="menubar" role="banner">
+    <div class="menubar-left">
+      <button class="menu-item apple-logo" aria-label="Apple menu">
+        <svg viewBox="0 0 384 512" width="14" height="14" aria-hidden="true">
+          <path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
+        </svg>
+      </button>
+      <span class="menu-item active-app-name" id="activeAppName">Finder</span>
+      <span class="menu-item">File</span>
+      <span class="menu-item">Edit</span>
+      <span class="menu-item">View</span>
+      <span class="menu-item">Window</span>
+      <span class="menu-item">Help</span>
+    </div>
+    <div class="menubar-right">
+      <button class="menu-item theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+        <span class="theme-icon-dark">☾</span>
+        <span class="theme-icon-light">☀</span>
+      </button>
+      <span class="menu-item battery" title="Battery">
+        <svg viewBox="0 0 24 12" width="22" height="11" aria-hidden="true">
+          <rect x="0.5" y="0.5" width="20" height="11" rx="2" fill="none" stroke="currentColor"/>
+          <rect x="2" y="2" width="14" height="8" rx="1" fill="currentColor"/>
+          <rect x="21" y="3.5" width="2" height="5" rx="0.5" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="menu-item wifi" title="Wi-Fi">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+          <path fill="currentColor" d="M8 12.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM3.5 9a6 6 0 0 1 9 0l-1.4 1.4a4 4 0 0 0-6.2 0L3.5 9zM.7 6.2a10 10 0 0 1 14.6 0l-1.4 1.4a8 8 0 0 0-11.8 0L.7 6.2z"/>
+        </svg>
+      </span>
+      <span class="menu-item clock" id="menuClock">--:--</span>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       Desktop (wallpaper + windows)
+       ============================================================ -->
+  <main class="desktop" id="desktop">
+    <div class="wallpaper" aria-hidden="true"></div>
+
+    <!-- ABOUT WINDOW [EDIT: Personalize intro and links] -->
+    <section class="window" data-app="about" data-title="About — Your Name" style="--w: 720px; --h: 520px; --x: 80px; --y: 80px;">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" aria-label="Close"></button>
+          <button class="tl tl-min" aria-label="Minimize"></button>
+          <button class="tl tl-max" aria-label="Maximize"></button>
+        </div>
+        <div class="window-title">About — Your Name</div>
+        <div class="titlebar-spacer"></div>
+      </header>
+      <div class="window-body about-body">
+        <aside class="about-side">
+          <div class="avatar">YN</div>
+          <div class="about-meta">
+            <h1>Your Name</h1>
+            <p class="role">$ whoami → Software Engineer · Builder</p>
+            <div class="about-chips">
+              <span class="chip">Your City</span>
+              <span class="chip">X+ years</span>
+              <span class="chip">Open Source</span>
+            </div>
+          </div>
+        </aside>
+        <div class="about-main">
+          <p class="about-path">~/resume/about.md</p>
+          <p>
+            Short, friendly intro paragraph. Describe what you build, what you care about,
+            and the kinds of problems you love working on. Keep it to two or three sentences
+            so a recruiter can read it at a glance.
+          </p>
+          <p>
+            Highlight strengths: backend systems, product engineering, design sensibility,
+            mentorship — whatever sets you apart. <em>[EDIT]</em>
+          </p>
+          <div class="about-actions">
+            <a class="btn btn-primary" href="mailto:you@example.com">Email me</a>
+            <a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="#" target="_blank" rel="noopener">Resume PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS WINDOW [EDIT: Update stack groups] -->
+    <section class="window" data-app="skills" data-title="Skills — Terminal" style="--w: 760px; --h: 560px; --x: 160px; --y: 140px;">
+      <header class="window-titlebar terminal-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" aria-label="Close"></button>
+          <button class="tl tl-min" aria-label="Minimize"></button>
+          <button class="tl tl-max" aria-label="Maximize"></button>
+        </div>
+        <div class="window-title">you@resume — zsh — 80×24</div>
+        <div class="titlebar-spacer"></div>
+      </header>
+      <div class="window-body terminal-body">
+        <p class="terminal-path">~/resume/skills.sh</p>
+        <pre class="terminal-block"><span class="t-prompt">you@resume ~/skills $</span> cat stack.json | jq '.'
+<span class="t-comment"># A snapshot of the tools I reach for</span>
+{
+  <span class="t-key">"languages"</span>:   [<span class="t-str">"TypeScript"</span>, <span class="t-str">"Python"</span>, <span class="t-str">"Go"</span>],
+  <span class="t-key">"backend"</span>:     [<span class="t-str">"Node.js"</span>, <span class="t-str">"FastAPI"</span>, <span class="t-str">"PostgreSQL"</span>],
+  <span class="t-key">"frontend"</span>:    [<span class="t-str">"React"</span>, <span class="t-str">"Next.js"</span>, <span class="t-str">"CSS"</span>],
+  <span class="t-key">"infra"</span>:       [<span class="t-str">"AWS"</span>, <span class="t-str">"Docker"</span>, <span class="t-str">"Terraform"</span>],
+  <span class="t-key">"data_ai"</span>:     [<span class="t-str">"Airflow"</span>, <span class="t-str">"LLMs"</span>, <span class="t-str">"Vector DB"</span>],
+  <span class="t-key">"tools"</span>:       [<span class="t-str">"Git"</span>, <span class="t-str">"Figma"</span>, <span class="t-str">"Linear"</span>]
+}</pre>
+
+        <div class="skill-grid">
+          <div class="skill-card">
+            <h3>Backend</h3>
+            <div class="tags">
+              <span>Node.js</span><span>TypeScript</span><span>FastAPI</span><span>PostgreSQL</span>
+            </div>
+            <p>API design, distributed systems, performance and observability. <em>[EDIT]</em></p>
+          </div>
+          <div class="skill-card">
+            <h3>Frontend</h3>
+            <div class="tags">
+              <span>React</span><span>Next.js</span><span>CSS</span><span>Design Systems</span>
+            </div>
+            <p>Accessible, fast UIs with a strong eye for polish and motion.</p>
+          </div>
+          <div class="skill-card">
+            <h3>Infrastructure</h3>
+            <div class="tags">
+              <span>AWS</span><span>Docker</span><span>Terraform</span><span>CI/CD</span>
+            </div>
+            <p>Infra-as-code, deployment automation, and reliable rollouts.</p>
+          </div>
+          <div class="skill-card">
+            <h3>Data &amp; AI</h3>
+            <div class="tags">
+              <span>Airflow</span><span>LLMs</span><span>Vector DB</span><span>Embeddings</span>
+            </div>
+            <p>Pipelines, retrieval-augmented apps, and pragmatic ML.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE WINDOW [EDIT: Replace timeline entries] -->
+    <section class="window" data-app="experience" data-title="Experience — Timeline" style="--w: 780px; --h: 600px; --x: 240px; --y: 100px;">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" aria-label="Close"></button>
+          <button class="tl tl-min" aria-label="Minimize"></button>
+          <button class="tl tl-max" aria-label="Maximize"></button>
+        </div>
+        <div class="window-title">Experience — Timeline</div>
+        <div class="titlebar-spacer"></div>
+      </header>
+      <div class="window-body">
+        <p class="window-path">~/resume/experience/</p>
+        <h2 class="section-title">Experience</h2>
+        <p class="section-sub">A chronological view of the work I'm proud of.</p>
+
+        <ol class="timeline">
+          <li class="timeline-entry">
+            <div class="timeline-meta">
+              <span class="dot"></span>
+              <time>2024 — Present</time>
+            </div>
+            <div class="timeline-content">
+              <h3>Senior Engineer · <span class="company">Company Name</span></h3>
+              <p class="time-range">2024.01 — Present</p>
+              <ul>
+                <li>Led design and rollout of [system] serving [scale] of traffic.</li>
+                <li>Built [platform/feature] used by [users / customers].</li>
+                <li>Mentored engineers and improved release reliability.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-entry">
+            <div class="timeline-meta">
+              <span class="dot"></span>
+              <time>2021 — 2024</time>
+            </div>
+            <div class="timeline-content">
+              <h3>Software Engineer · <span class="company">Previous Company</span></h3>
+              <p class="time-range">2021.03 — 2024.01</p>
+              <ul>
+                <li>Shipped [product/feature] that drove [outcome].</li>
+                <li>Migrated [legacy system] to [modern stack].</li>
+                <li>Owned on-call rotation and runbooks.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-entry">
+            <div class="timeline-meta">
+              <span class="dot"></span>
+              <time>2019 — 2021</time>
+            </div>
+            <div class="timeline-content">
+              <h3>Junior Engineer · <span class="company">First Company</span></h3>
+              <p class="time-range">2019.06 — 2021.03</p>
+              <ul>
+                <li>Contributed to [project] alongside a small team.</li>
+                <li>Picked up [skill] and grew into product ownership.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PROJECTS WINDOW [EDIT: Replace project cards] -->
+    <section class="window" data-app="projects" data-title="Projects" style="--w: 760px; --h: 560px; --x: 200px; --y: 160px;">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" aria-label="Close"></button>
+          <button class="tl tl-min" aria-label="Minimize"></button>
+          <button class="tl tl-max" aria-label="Maximize"></button>
+        </div>
+        <div class="window-title">Projects</div>
+        <div class="titlebar-spacer"></div>
+      </header>
+      <div class="window-body">
+        <p class="window-path">~/resume/projects/</p>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-sub">Side projects and open source work.</p>
+
+        <div class="project-grid">
+          <a class="project-card" href="#" target="_blank" rel="noopener">
+            <div class="proj-tag" data-color="js">JS</div>
+            <h3>Project Name</h3>
+            <p>One-line description of what it does and why it matters.</p>
+          </a>
+          <a class="project-card" href="#" target="_blank" rel="noopener">
+            <div class="proj-tag" data-color="ts">TS</div>
+            <h3>Another Project</h3>
+            <p>Concise description with the impact or tech highlight.</p>
+          </a>
+          <a class="project-card" href="#" target="_blank" rel="noopener">
+            <div class="proj-tag" data-color="py">PY</div>
+            <h3>Data Pipeline</h3>
+            <p>Automation tool or pipeline. <em>[EDIT]</em></p>
+          </a>
+          <a class="project-card" href="#" target="_blank" rel="noopener">
+            <div class="proj-tag" data-color="ai">AI</div>
+            <h3>LLM Side Project</h3>
+            <p>Retrieval-augmented or agent-based experiment.</p>
+          </a>
+          <a class="project-card" href="#" target="_blank" rel="noopener">
+            <div class="proj-tag" data-color="sh">SH</div>
+            <h3>DevOps Tool</h3>
+            <p>CLI utility or infra recipe you maintain.</p>
+          </a>
+          <a class="project-card" href="#" target="_blank" rel="noopener">
+            <div class="proj-tag" data-color="fw">FW</div>
+            <h3>Mini Framework</h3>
+            <p>Educational reimplementation to understand internals.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS WINDOW [EDIT: Add or remove items] -->
+    <section class="window" data-app="publications" data-title="Publications" style="--w: 700px; --h: 500px; --x: 280px; --y: 140px;">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" aria-label="Close"></button>
+          <button class="tl tl-min" aria-label="Minimize"></button>
+          <button class="tl tl-max" aria-label="Maximize"></button>
+        </div>
+        <div class="window-title">Publications</div>
+        <div class="titlebar-spacer"></div>
+      </header>
+      <div class="window-body">
+        <p class="window-path">~/resume/publications/</p>
+        <h2 class="section-title">Publications</h2>
+        <p class="section-sub">Books, articles, and writing.</p>
+
+        <div class="pub-list">
+          <article class="pub-item">
+            <div class="pub-cover" data-tone="a">📘</div>
+            <div class="pub-info">
+              <h3>Book or Article Title</h3>
+              <p class="pub-meta">Publisher · 2024</p>
+              <p>One-sentence summary of what the publication covers.</p>
+            </div>
+          </article>
+          <article class="pub-item">
+            <div class="pub-cover" data-tone="b">📗</div>
+            <div class="pub-info">
+              <h3>Another Publication</h3>
+              <p class="pub-meta">Publisher · 2022</p>
+              <p>Add more publications, or hide this window if not relevant.</p>
+            </div>
+          </article>
+          <article class="pub-item">
+            <div class="pub-cover" data-tone="c">📕</div>
+            <div class="pub-info">
+              <h3>Article Series</h3>
+              <p class="pub-meta">Personal Blog · 2023</p>
+              <p>Link out to long-form writing or technical deep dives.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LECTURES WINDOW [EDIT: Talks / classes] -->
+    <section class="window" data-app="lectures" data-title="Lectures" style="--w: 720px; --h: 520px; --x: 320px; --y: 120px;">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" aria-label="Close"></button>
+          <button class="tl tl-min" aria-label="Minimize"></button>
+          <button class="tl tl-max" aria-label="Maximize"></button>
+        </div>
+        <div class="window-title">Lectures</div>
+        <div class="titlebar-spacer"></div>
+      </header>
+      <div class="window-body">
+        <p class="window-path">~/resume/lectures/</p>
+        <h2 class="section-title">Lectures &amp; Talks</h2>
+        <p class="section-sub">Workshops, conference talks, and classes.</p>
+
+        <ul class="lecture-list">
+          <li>
+            <div class="lec-date">2025.01</div>
+            <div class="lec-body">
+              <h4>Talk Title</h4>
+              <p>Hosting organization or event.</p>
+            </div>
+          </li>
+          <li>
+            <div class="lec-date">2024.10</div>
+            <div class="lec-body">
+              <h4>Workshop on [Topic]</h4>
+              <p>2-day workshop for engineers.</p>
+            </div>
+          </li>
+          <li>
+            <div class="lec-date">2023.06</div>
+            <div class="lec-body">
+              <h4>University Guest Lecture</h4>
+              <p>Career talk for CS students.</p>
+            </div>
+          </li>
+          <li>
+            <div class="lec-date">2022.04</div>
+            <div class="lec-body">
+              <h4>Conference Talk</h4>
+              <p>30-minute talk on [topic].</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GROWTH WINDOW [EDIT: Career story milestones] -->
+    <section class="window" data-app="growth" data-title="Growth Story" style="--w: 720px; --h: 540px; --x: 360px; --y: 100px;">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" aria-label="Close"></button>
+          <button class="tl tl-min" aria-label="Minimize"></button>
+          <button class="tl tl-max" aria-label="Maximize"></button>
+        </div>
+        <div class="window-title">Growth Story</div>
+        <div class="titlebar-spacer"></div>
+      </header>
+      <div class="window-body">
+        <p class="window-path">~/resume/growth-story.md</p>
+        <h2 class="section-title">Growth Story</h2>
+        <p class="section-sub">My path as an engineer, in five chapters.</p>
+
+        <ol class="growth-list">
+          <li>
+            <div class="g-year">20XX ~</div>
+            <div>
+              <h4>First lines of code</h4>
+              <p>How I got started, what hooked me, and the first thing I shipped.</p>
+            </div>
+          </li>
+          <li>
+            <div class="g-year">20XX ~</div>
+            <div>
+              <h4>Picking up the craft</h4>
+              <p>Learning the fundamentals, building side projects, finding my style.</p>
+            </div>
+          </li>
+          <li>
+            <div class="g-year">20XX ~</div>
+            <div>
+              <h4>Going to production</h4>
+              <p>Operating real services, on-call, customers, scale, and trade-offs.</p>
+            </div>
+          </li>
+          <li>
+            <div class="g-year">20XX ~</div>
+            <div>
+              <h4>Building teams</h4>
+              <p>Leading projects, mentoring, raising the bar across a team.</p>
+            </div>
+          </li>
+          <li>
+            <div class="g-year">Today</div>
+            <div>
+              <h4>What's next</h4>
+              <p>Where I want to grow next and the problems I want to solve.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTACT WINDOW [EDIT: Update links] -->
+    <section class="window" data-app="contact" data-title="Contact" style="--w: 620px; --h: 460px; --x: 220px; --y: 200px;">
+      <header class="window-titlebar">
+        <div class="traffic-lights">
+          <button class="tl tl-close" aria-label="Close"></button>
+          <button class="tl tl-min" aria-label="Minimize"></button>
+          <button class="tl tl-max" aria-label="Maximize"></button>
+        </div>
+        <div class="window-title">Contact</div>
+        <div class="titlebar-spacer"></div>
+      </header>
+      <div class="window-body contact-body">
+        <p class="window-path">~/resume/contact.txt</p>
+        <h2 class="section-title">Let's talk</h2>
+        <p class="section-sub">
+          I'm always happy to chat about engineering, product, or interesting problems.
+        </p>
+
+        <ul class="contact-list">
+          <li>
+            <span class="c-label">Email</span>
+            <a href="mailto:you@example.com">you@example.com</a>
+          </li>
+          <li>
+            <span class="c-label">GitHub</span>
+            <a href="https://github.com/" target="_blank" rel="noopener">github.com/yourname</a>
+          </li>
+          <li>
+            <span class="c-label">LinkedIn</span>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener">linkedin.com/in/yourname</a>
+          </li>
+          <li>
+            <span class="c-label">Blog</span>
+            <a href="#" target="_blank" rel="noopener">yourblog.dev</a>
+          </li>
+          <li>
+            <span class="c-label">Resume</span>
+            <a href="#" target="_blank" rel="noopener">Download PDF</a>
+          </li>
+        </ul>
+
+        <p class="contact-footer">© 2026 Your Name. Built with care on a macOS-style canvas.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       Dock
+       ============================================================ -->
+  <nav class="dock" role="navigation" aria-label="Dock">
+    <ul class="dock-list" id="dockList">
+      <li class="dock-item" data-target="about" data-tooltip="About">
+        <span class="dock-icon" style="--g1:#5b9cff;--g2:#0a84ff;">
+          <span class="dock-glyph">A</span>
+        </span>
+      </li>
+      <li class="dock-item" data-target="skills" data-tooltip="Skills">
+        <span class="dock-icon dock-icon-dark">
+          <span class="dock-glyph mono">&gt;_</span>
+        </span>
+      </li>
+      <li class="dock-item" data-target="experience" data-tooltip="Experience">
+        <span class="dock-icon" style="--g1:#ffce6d;--g2:#ff9f0a;">
+          <span class="dock-glyph">▦</span>
+        </span>
+      </li>
+      <li class="dock-item" data-target="projects" data-tooltip="Projects">
+        <span class="dock-icon" style="--g1:#7ad3a1;--g2:#30d158;">
+          <span class="dock-glyph">◆</span>
+        </span>
+      </li>
+      <li class="dock-item" data-target="publications" data-tooltip="Publications">
+        <span class="dock-icon" style="--g1:#ff8a8a;--g2:#ff453a;">
+          <span class="dock-glyph">📖</span>
+        </span>
+      </li>
+      <li class="dock-item" data-target="lectures" data-tooltip="Lectures">
+        <span class="dock-icon" style="--g1:#c79bff;--g2:#bf5af2;">
+          <span class="dock-glyph">🎤</span>
+        </span>
+      </li>
+      <li class="dock-item" data-target="growth" data-tooltip="Growth">
+        <span class="dock-icon" style="--g1:#7bd5e0;--g2:#5ac8fa;">
+          <span class="dock-glyph">↗</span>
+        </span>
+      </li>
+      <li class="dock-separator" aria-hidden="true"></li>
+      <li class="dock-item" data-target="contact" data-tooltip="Contact">
+        <span class="dock-icon" style="--g1:#e7e7eb;--g2:#9aa0a6;">
+          <span class="dock-glyph">✉</span>
+        </span>
+      </li>
+    </ul>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
