@@ -705,6 +705,13 @@ a:hover {
   color: var(--text-soft);
   font-size: 13px;
 }
+.proj-date {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-mute);
+}
 .proj-tag {
   display: inline-flex;
   align-items: center;

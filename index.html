@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A macOS-style interactive resume." />
-  <title>Resume.app — Ben Kim</title>
+  <meta name="description" content="Benjamin Kim — Computer Science student at USC Viterbi. Full-stack developer." />
+  <title>Resume.app — Benjamin Kim</title>
   <link rel="stylesheet" href="styles.css" />
   <!--
-    Edit the content of each .window below to personalize the resume.
-    Sections marked with [EDIT] are intended to be replaced with your details.
+    Each <section class="window"> below is one "app". Edit the content freely.
+    Spots marked [EDIT] still need your personal links.
   -->
 </head>
 <body>
@@ -56,49 +56,54 @@
   <main class="desktop" id="desktop">
     <div class="wallpaper" aria-hidden="true"></div>
 
-    <!-- ABOUT WINDOW [EDIT: Personalize intro and links] -->
-    <section class="window" data-app="about" data-title="About — Ben Kim" style="--w: 720px; --h: 520px; --x: 80px; --y: 80px;">
+    <!-- ABOUT -->
+    <section class="window" data-app="about" data-title="About — Benjamin Kim" style="--w: 720px; --h: 520px; --x: 80px; --y: 80px;">
       <header class="window-titlebar">
         <div class="traffic-lights">
           <button class="tl tl-close" aria-label="Close"></button>
           <button class="tl tl-min" aria-label="Minimize"></button>
           <button class="tl tl-max" aria-label="Maximize"></button>
         </div>
-        <div class="window-title">About — Ben Kim</div>
+        <div class="window-title">About — Benjamin Kim</div>
         <div class="titlebar-spacer"></div>
       </header>
       <div class="window-body about-body">
         <aside class="about-side">
-          <div class="avatar">YN</div>
+          <div class="avatar">BK</div>
           <div class="about-meta">
-            <h1>Benjamin Minhyeok Kim</h1>
-            <p class="role">$ whoami → Cybersecurity · Software Engineer</p>
+            <h1>Benjamin Kim</h1>
+            <p class="role">$ whoami → CS @ USC · Full-Stack Developer</p>
             <div class="about-chips">
-              <span class="chip">San Jose / LA</span>
-              <span class="chip">University Of Southern California</span>
-              <span class="chip">Open Source</span>
+              <span class="chip">Los Angeles, CA</span>
+              <span class="chip">USC Viterbi '29</span>
+              <span class="chip">GPA 3.92</span>
             </div>
           </div>
         </aside>
         <div class="about-main">
           <p class="about-path">~/resume/about.md</p>
           <p>
-            Enthusiastic about developing project and making them secure. Have been passionate about understanding how the rising new technologies
-            have been changing the ways systems are designed and secured.
+            Computer Science student at USC Viterbi who likes building software people
+            actually use — desktop automation clients, inventory systems for a rocket lab,
+            and full-stack web tools.
           </p>
           <p>
-            Highlight strengths: backend systems, product engineering, vulnerability testing.
+            My work spans the whole stack: interaction layers in Electron and React, REST
+            APIs and databases on the backend, and data science work with neural networks
+            and sensor data. I also spent a year teaching kids to code, which is still the
+            fastest way I've found to learn something properly.
           </p>
           <div class="about-actions">
-            <a class="btn btn-primary" href="benjaminkim006@gmail.com">Email me</a>
-            <a class="btn" href="https://github.com/ibenkim/" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">Resume PDF</a>
+            <a class="btn btn-primary" href="mailto:benkim@usc.edu">Email me</a>
+            <a class="btn" href="https://linkedin.com/in/ben-kim-m" target="_blank" rel="noopener">LinkedIn</a>
+            <!-- [EDIT] point this at your GitHub profile -->
+            <a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS WINDOW [EDIT: Update stack groups] -->
+    <!-- SKILLS -->
     <section class="window" data-app="skills" data-title="Skills — Terminal" style="--w: 760px; --h: 560px; --x: 160px; --y: 140px;">
       <header class="window-titlebar terminal-titlebar">
         <div class="traffic-lights">
@@ -106,55 +111,56 @@
           <button class="tl tl-min" aria-label="Minimize"></button>
           <button class="tl tl-max" aria-label="Maximize"></button>
         </div>
-        <div class="window-title">you@resume — zsh — 80×24</div>
+        <div class="window-title">ben@resume — zsh — 80×24</div>
         <div class="titlebar-spacer"></div>
       </header>
       <div class="window-body terminal-body">
         <p class="terminal-path">~/resume/skills.sh</p>
-        <pre class="terminal-block"><span class="t-prompt">you@resume ~/skills $</span> cat stack.json | jq '.'
-<span class="t-comment"># A snapshot of the tools I reach for</span>
+        <pre class="terminal-block"><span class="t-prompt">ben@resume ~/skills $</span> cat stack.json | jq '.'
+<span class="t-comment"># What I reach for, roughly in order of comfort</span>
 {
-  <span class="t-key">"languages"</span>:   [<span class="t-str">"C++"</span>, <span class="t-str">"Python"</span>, <span class="t-str">"Java"</span>],
-  <span class="t-key">"backend"</span>:     [<span class="t-str">"Node.js"</span>, <span class="t-str">"FastAPI"</span>, <span class="t-str">"PostgreSQL"</span>],
-  <span class="t-key">"frontend"</span>:    [<span class="t-str">"React"</span>, <span class="t-str">"Next.js"</span>, <span class="t-str">"CSS"</span>],
-  <span class="t-key">"infra"</span>:       [<span class="t-str">"Docker"</span>, <span class="t-str">"AWS"</span>],
-  <span class="t-key">"tools"</span>:       [<span class="t-str">"Git"</span>, <span class="t-str">"Figma"</span>]
+  <span class="t-key">"languages"</span>:  [<span class="t-str">"C++"</span>, <span class="t-str">"Java"</span>, <span class="t-str">"Python"</span>, <span class="t-str">"JavaScript"</span>, <span class="t-str">"Swift"</span>],
+  <span class="t-key">"web"</span>:        [<span class="t-str">"React"</span>, <span class="t-str">"Node.js"</span>, <span class="t-str">"Django"</span>, <span class="t-str">"Spring Boot"</span>, <span class="t-str">"HTML/CSS"</span>],
+  <span class="t-key">"desktop_xr"</span>: [<span class="t-str">"Electron"</span>, <span class="t-str">"Unity"</span>, <span class="t-str">"C#"</span>, <span class="t-str">"XR"</span>],
+  <span class="t-key">"data"</span>:       [<span class="t-str">"MySQL"</span>, <span class="t-str">"SQLite"</span>, <span class="t-str">"PL/SQL"</span>, <span class="t-str">"Redis"</span>, <span class="t-str">"Jupyter"</span>],
+  <span class="t-key">"ml"</span>:         [<span class="t-str">"Neural Networks"</span>, <span class="t-str">"Deep Learning"</span>, <span class="t-str">"Transformers"</span>],
+  <span class="t-key">"cloud"</span>:      [<span class="t-str">"AWS"</span>, <span class="t-str">"Git"</span>, <span class="t-str">"REST APIs"</span>]
 }</pre>
 
         <div class="skill-grid">
           <div class="skill-card">
-            <h3>Backend</h3>
+            <h3>Languages</h3>
             <div class="tags">
-              <span>Node.js</span><span>TypeScript</span><span>JavaScript</span><span>PostgreSQL</span>
+              <span>C++</span><span>Java</span><span>Python</span><span>JavaScript</span><span>Swift</span><span>C#</span>
             </div>
-            <p>API design, distributed systems, performance and observability. <em>[EDIT]</em></p>
+            <p>Comfortable moving between systems-level C++ and higher-level scripting depending on what the problem needs.</p>
           </div>
           <div class="skill-card">
-            <h3>Frontend</h3>
+            <h3>Full-Stack Web</h3>
             <div class="tags">
-              <span>React</span><span>Next.js</span><span>CSS</span><span>Design Systems</span>
+              <span>React</span><span>Node.js</span><span>Django</span><span>Spring Boot</span><span>HTML/CSS</span>
             </div>
-            <p>Accessible, fast UIs with a strong eye for polish and motion.</p>
+            <p>REST APIs, authentication, real-time previews, and interaction layers built to hold up in production.</p>
           </div>
           <div class="skill-card">
-            <h3>Infrastructure</h3>
+            <h3>Data &amp; ML</h3>
             <div class="tags">
-              <span>AWS</span><span>Docker</span><span>Terraform</span><span>CI/CD</span>
+              <span>MySQL</span><span>SQLite</span><span>PL/SQL</span><span>Jupyter</span><span>Transformers</span>
             </div>
-            <p>Infra-as-code, deployment automation, and reliable rollouts.</p>
+            <p>Schema design and analysis work, plus deep learning applied to radar and sensor-fusion data.</p>
           </div>
           <div class="skill-card">
-            <h3>Data &amp; AI</h3>
+            <h3>Platforms &amp; Tools</h3>
             <div class="tags">
-              <span>Airflow</span><span>LLMs</span><span>Vector DB</span><span>Embeddings</span>
+              <span>AWS</span><span>Electron</span><span>Unity</span><span>Redis</span><span>Git</span>
             </div>
-            <p>Pipelines, retrieval-augmented apps, and pragmatic ML.</p>
+            <p>Cloud computing, desktop app packaging, and XR development across Unity and the wider XR stack.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE WINDOW [EDIT: Replace timeline entries] -->
+    <!-- EXPERIENCE -->
     <section class="window" data-app="experience" data-title="Experience — Timeline" style="--w: 780px; --h: 600px; --x: 240px; --y: 100px;">
       <header class="window-titlebar">
         <div class="traffic-lights">
@@ -168,48 +174,95 @@
       <div class="window-body">
         <p class="window-path">~/resume/experience/</p>
         <h2 class="section-title">Experience</h2>
-        <p class="section-sub">A chronological view of the work I'm proud of.</p>
+        <p class="section-sub">Where I've worked, most recent first.</p>
 
         <ol class="timeline">
           <li class="timeline-entry">
             <div class="timeline-meta">
               <span class="dot"></span>
-              <time>Jan 2026 — Present</time>
-            </div>
-            <div class="timeline-content">
-              <h3>Full Stack Developer · <span class="company">USC Rocket Propulsion Laboratory</span></h3>
-              <p class="time-range">2026.01 — Present</p>
-              <ul>
-                <li>Built Automatic Inventory Manage System.</li>
-                <li>Implemented Sorting Mechanism and Parsing Files.</li>
-                <li>Also Developed Item Distribution and Locating System.</li>
-              </ul>
-            </div>
-          </li>
-          <li class="timeline-entry">
-            <div class="timeline-meta">
-              <span class="dot"></span>
-              <time>May 2026 — Present</time>
+              <time>2026.05 — Present</time>
             </div>
             <div class="timeline-content">
               <h3>Full Stack Developer · <span class="company">Gray</span></h3>
-              <p class="time-range">2026.05 — Present</p>
+              <p class="time-range">May 2026 — Present</p>
               <ul>
-                <li>Managed AWS backends and developed AI assistant tool that simplifies user workflow based on their behavior.</li>
+                <li>Building a macOS workflow automation client that records actions across apps, reviews AI-learned steps, and replays them on a schedule.</li>
+                <li>Implemented the UI and interaction layer in Electron and React.</li>
+                <li>Shipped team sharing, onboarding, and permission handling backed by state machines.</li>
               </ul>
             </div>
           </li>
           <li class="timeline-entry">
             <div class="timeline-meta">
               <span class="dot"></span>
-              <time>Jun 2024 — Aug 2024</time>
+              <time>2026.01 — Present</time>
+            </div>
+            <div class="timeline-content">
+              <h3>Full Stack Developer · <span class="company">USC Rocket Propulsion Lab</span></h3>
+              <p class="time-range">January 2026 — Present</p>
+              <ul>
+                <li>Built an automated inventory management system that tracks every item the lab depends on.</li>
+                <li>Implemented sorting mechanisms and CSV parsing for immediate lookups.</li>
+                <li>Owned authentication, system architecture, and security work.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-entry">
+            <div class="timeline-meta">
+              <span class="dot"></span>
+              <time>2026.07</time>
+            </div>
+            <div class="timeline-content">
+              <h3>Event Coordinator · <span class="company">San Francisco AI Summit</span></h3>
+              <p class="time-range">July 2026</p>
+              <ul>
+                <li>Coordinated event operations and executive logistics for international AI and technology leaders.</li>
+                <li>Supported delegations from NVIDIA, OpenAI, Anthropic, Samsung Electronics, SK Hynix, and Broadcom.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-entry">
+            <div class="timeline-meta">
+              <span class="dot"></span>
+              <time>2024.05 — 2025.07</time>
+            </div>
+            <div class="timeline-content">
+              <h3>Instructor · <span class="company">The Coder School</span></h3>
+              <p class="time-range">May 2024 — July 2025</p>
+              <ul>
+                <li>Taught programming one-on-one and in summer camps at a coaching institution with 68 locations.</li>
+                <li>Introduced students to block coding and Python game development tools.</li>
+                <li>Designed project ideas that kept students engaged past the basics.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-entry">
+            <div class="timeline-meta">
+              <span class="dot"></span>
+              <time>2024.06 — 2024.08</time>
             </div>
             <div class="timeline-content">
               <h3>Data Science Intern · <span class="company">Smart Radar System</span></h3>
-              <p class="time-range">2024.06 — 2024.08</p>
+              <p class="time-range">June 2024 — August 2024</p>
               <ul>
-                <li>Utilized neural networks, deep learning, transformers, radar systems, and sensor fusing.</li>
-                <li>Analyzed various radar readings.</li>
+                <li>Worked with neural networks, deep learning, transformers, and sensor fusion on radar data.</li>
+                <li>Studied radar hardware and software development end to end.</li>
+                <li>Analyzed readings to differentiate bicycles, motorcycles, and cars.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="timeline-entry">
+            <div class="timeline-meta">
+              <span class="dot"></span>
+              <time>2024.07</time>
+            </div>
+            <div class="timeline-content">
+              <h3>Intern · <span class="company">Mineta Summer Transportation Institute</span></h3>
+              <p class="time-range">July 2024 · Bronze Award</p>
+              <ul>
+                <li>Used census data to identify income groups that would benefit most from public transit tax cuts.</li>
+                <li>Wrote an initiative proposal addressing local transit issues and presented it at UC San Francisco Law School.</li>
+                <li>Sponsored by the Metropolitan Transportation Commission, Bay Area Government.</li>
               </ul>
             </div>
           </li>
@@ -217,7 +270,7 @@
       </div>
     </section>
 
-    <!-- PROJECTS WINDOW [EDIT: Replace project cards] -->
+    <!-- PROJECTS -->
     <section class="window" data-app="projects" data-title="Projects" style="--w: 760px; --h: 560px; --x: 200px; --y: 160px;">
       <header class="window-titlebar">
         <div class="traffic-lights">
@@ -231,138 +284,138 @@
       <div class="window-body">
         <p class="window-path">~/resume/projects/</p>
         <h2 class="section-title">Projects</h2>
-        <p class="section-sub">Side projects and open source work.</p>
+        <p class="section-sub">Selected things I've built. <em>[EDIT: add repo links]</em></p>
 
         <div class="project-grid">
           <a class="project-card" href="#" target="_blank" rel="noopener">
+            <div class="proj-tag" data-color="ai">XR</div>
+            <h3>Rewind Rescue XR</h3>
+            <p>Immersive mixed-reality emergency response trainer. Unity and C# simulate a 360° scene with user tracking that adds pressure while performing first aid. <span class="proj-date">April 2026</span></p>
+          </a>
+          <a class="project-card" href="#" target="_blank" rel="noopener">
+            <div class="proj-tag" data-color="ts">EXT</div>
+            <h3>StepDue</h3>
+            <p>Browser-native accountability tool for focused work: session tracking, progress visualization, and optional distraction controls. <span class="proj-date">February 2026</span></p>
+          </a>
+          <a class="project-card" href="#" target="_blank" rel="noopener">
             <div class="proj-tag" data-color="js">JS</div>
-            <h3>Project Name</h3>
-            <p>One-line description of what it does and why it matters.</p>
+            <h3>NewUrl</h3>
+            <p>Scalable full-stack URL shortener with AI-generated aliases and QR code creation, built on Node.js with Redis key-value storage. <span class="proj-date">December 2025</span></p>
           </a>
           <a class="project-card" href="#" target="_blank" rel="noopener">
-            <div class="proj-tag" data-color="ts">TS</div>
-            <h3>Another Project</h3>
-            <p>Concise description with the impact or tech highlight.</p>
+            <div class="proj-tag" data-color="fw">MD</div>
+            <h3>Markdown Notetaker</h3>
+            <p>Real-time Markdown note-taking app in React and Spring Boot with live preview, REST APIs, and file export. <span class="proj-date">November 2025</span></p>
           </a>
           <a class="project-card" href="#" target="_blank" rel="noopener">
-            <div class="proj-tag" data-color="py">PY</div>
-            <h3>Data Pipeline</h3>
-            <p>Automation tool or pipeline. <em>[EDIT]</em></p>
+            <div class="proj-tag" data-color="py">SAT</div>
+            <h3>Build a CubeSat Challenge</h3>
+            <p>End-to-end CubeSat design with an optical payload, power distribution, and ground-station data transmission. Honorable Mention among ~60 teams at MIT Beaver Works. <span class="proj-date">April 2024</span></p>
           </a>
           <a class="project-card" href="#" target="_blank" rel="noopener">
-            <div class="proj-tag" data-color="ai">AI</div>
-            <h3>LLM Side Project</h3>
-            <p>Retrieval-augmented or agent-based experiment.</p>
-          </a>
-          <a class="project-card" href="#" target="_blank" rel="noopener">
-            <div class="proj-tag" data-color="sh">SH</div>
-            <h3>DevOps Tool</h3>
-            <p>CLI utility or infra recipe you maintain.</p>
-          </a>
-          <a class="project-card" href="#" target="_blank" rel="noopener">
-            <div class="proj-tag" data-color="fw">FW</div>
-            <h3>Mini Framework</h3>
-            <p>Educational reimplementation to understand internals.</p>
+            <div class="proj-tag" data-color="sh">WEB</div>
+            <h3>Resume.app</h3>
+            <p>This site — a macOS desktop environment built in vanilla HTML, CSS, and JavaScript with a working window manager. <span class="proj-date">2026</span></p>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- PUBLICATIONS WINDOW [EDIT: Add or remove items] -->
-    <section class="window" data-app="publications" data-title="Publications" style="--w: 700px; --h: 500px; --x: 280px; --y: 140px;">
+    <!-- EDUCATION & AWARDS -->
+    <section class="window" data-app="education" data-title="Education" style="--w: 700px; --h: 500px; --x: 280px; --y: 140px;">
       <header class="window-titlebar">
         <div class="traffic-lights">
           <button class="tl tl-close" aria-label="Close"></button>
           <button class="tl tl-min" aria-label="Minimize"></button>
           <button class="tl tl-max" aria-label="Maximize"></button>
         </div>
-        <div class="window-title">Publications</div>
+        <div class="window-title">Education</div>
         <div class="titlebar-spacer"></div>
       </header>
       <div class="window-body">
-        <p class="window-path">~/resume/publications/</p>
-        <h2 class="section-title">Publications</h2>
-        <p class="section-sub">Books, articles, and writing.</p>
+        <p class="window-path">~/resume/education/</p>
+        <h2 class="section-title">Education &amp; Awards</h2>
+        <p class="section-sub">Coursework and recognition.</p>
 
         <div class="pub-list">
           <article class="pub-item">
-            <div class="pub-cover" data-tone="a">📘</div>
+            <div class="pub-cover" data-tone="c">🎓</div>
             <div class="pub-info">
-              <h3>Book or Article Title</h3>
-              <p class="pub-meta">Publisher · 2024</p>
-              <p>One-sentence summary of what the publication covers.</p>
+              <h3>University of Southern California</h3>
+              <p class="pub-meta">Viterbi School of Engineering · Expected May 2029</p>
+              <p>B.S. in Computer Science. GPA 3.92. Los Angeles, CA.</p>
             </div>
           </article>
           <article class="pub-item">
-            <div class="pub-cover" data-tone="b">📗</div>
+            <div class="pub-cover" data-tone="a">🥉</div>
             <div class="pub-info">
-              <h3>Another Publication</h3>
-              <p class="pub-meta">Publisher · 2022</p>
-              <p>Add more publications, or hide this window if not relevant.</p>
+              <h3>Bronze Award</h3>
+              <p class="pub-meta">Mineta Summer Transportation Institute · July 2024</p>
+              <p>Recognized for a transit equity proposal presented at UC San Francisco Law School.</p>
             </div>
           </article>
           <article class="pub-item">
-            <div class="pub-cover" data-tone="c">📕</div>
+            <div class="pub-cover" data-tone="b">🛰️</div>
             <div class="pub-info">
-              <h3>Article Series</h3>
-              <p class="pub-meta">Personal Blog · 2023</p>
-              <p>Link out to long-form writing or technical deep dives.</p>
+              <h3>Honorable Mention</h3>
+              <p class="pub-meta">MIT Beaver Works Summer Institute · April 2024</p>
+              <p>Build a CubeSat Challenge, placing among roughly 60 competing teams.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- LECTURES WINDOW [EDIT: Talks / classes] -->
-    <section class="window" data-app="lectures" data-title="Lectures" style="--w: 720px; --h: 520px; --x: 320px; --y: 120px;">
+    <!-- TEACHING -->
+    <section class="window" data-app="teaching" data-title="Teaching" style="--w: 720px; --h: 520px; --x: 320px; --y: 120px;">
       <header class="window-titlebar">
         <div class="traffic-lights">
           <button class="tl tl-close" aria-label="Close"></button>
           <button class="tl tl-min" aria-label="Minimize"></button>
           <button class="tl tl-max" aria-label="Maximize"></button>
         </div>
-        <div class="window-title">Lectures</div>
+        <div class="window-title">Teaching</div>
         <div class="titlebar-spacer"></div>
       </header>
       <div class="window-body">
-        <p class="window-path">~/resume/lectures/</p>
-        <h2 class="section-title">Lectures &amp; Talks</h2>
-        <p class="section-sub">Workshops, conference talks, and classes.</p>
+        <p class="window-path">~/resume/teaching/</p>
+        <h2 class="section-title">Teaching &amp; Talks</h2>
+        <p class="section-sub">Explaining things is how I make sure I understand them.</p>
 
         <ul class="lecture-list">
           <li>
-            <div class="lec-date">2025.01</div>
+            <div class="lec-date">2024.05 —<br />2025.07</div>
             <div class="lec-body">
-              <h4>Talk Title</h4>
-              <p>Hosting organization or event.</p>
+              <h4>Code Coaching · The Coder School</h4>
+              <p>One-on-one instruction across 68 locations, covering fundamentals through project work.</p>
             </div>
           </li>
           <li>
-            <div class="lec-date">2024.10</div>
+            <div class="lec-date">2024 —<br />2025</div>
             <div class="lec-body">
-              <h4>Workshop on [Topic]</h4>
-              <p>2-day workshop for engineers.</p>
+              <h4>Summer Coding Camps</h4>
+              <p>Led camp sessions introducing students to block coding and Python game development.</p>
             </div>
           </li>
           <li>
-            <div class="lec-date">2023.06</div>
+            <div class="lec-date">2024.07</div>
             <div class="lec-body">
-              <h4>University Guest Lecture</h4>
-              <p>Career talk for CS students.</p>
+              <h4>Transit Equity Proposal</h4>
+              <p>Presented a census-driven policy initiative at UC San Francisco Law School.</p>
             </div>
           </li>
           <li>
-            <div class="lec-date">2022.04</div>
+            <div class="lec-date">Ongoing</div>
             <div class="lec-body">
-              <h4>Conference Talk</h4>
-              <p>30-minute talk on [topic].</p>
+              <h4>Project Mentoring</h4>
+              <p>Curating creative project ideas that get beginners past tutorials and into building.</p>
             </div>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- GROWTH WINDOW [EDIT: Career story milestones] -->
+    <!-- GROWTH -->
     <section class="window" data-app="growth" data-title="Growth Story" style="--w: 720px; --h: 540px; --x: 360px; --y: 100px;">
       <header class="window-titlebar">
         <div class="traffic-lights">
@@ -376,49 +429,49 @@
       <div class="window-body">
         <p class="window-path">~/resume/growth-story.md</p>
         <h2 class="section-title">Growth Story</h2>
-        <p class="section-sub">My path as an engineer, in five chapters.</p>
+        <p class="section-sub">How I got from first projects to shipping real software.</p>
 
         <ol class="growth-list">
           <li>
-            <div class="g-year">20XX ~</div>
+            <div class="g-year">2024</div>
             <div>
-              <h4>First lines of code</h4>
-              <p>How I got started, what hooked me, and the first thing I shipped.</p>
+              <h4>Hardware, data, and the world outside code</h4>
+              <p>A CubeSat challenge at MIT Beaver Works, radar deep learning at Smart Radar System, and a transit policy proposal taught me that the interesting problems are rarely purely technical.</p>
             </div>
           </li>
           <li>
-            <div class="g-year">20XX ~</div>
+            <div class="g-year">2024 — 2025</div>
             <div>
-              <h4>Picking up the craft</h4>
-              <p>Learning the fundamentals, building side projects, finding my style.</p>
+              <h4>Teaching to learn</h4>
+              <p>A year of coaching students at The Coder School forced me to explain fundamentals clearly, which is where most of my own gaps turned up.</p>
             </div>
           </li>
           <li>
-            <div class="g-year">20XX ~</div>
+            <div class="g-year">2025</div>
             <div>
-              <h4>Going to production</h4>
-              <p>Operating real services, on-call, customers, scale, and trade-offs.</p>
+              <h4>Full-stack in earnest</h4>
+              <p>Markdown Notetaker and NewUrl were where I learned to design APIs, pick storage, and finish things instead of abandoning them at 80%.</p>
             </div>
           </li>
           <li>
-            <div class="g-year">20XX ~</div>
+            <div class="g-year">2026</div>
             <div>
-              <h4>Building teams</h4>
-              <p>Leading projects, mentoring, raising the bar across a team.</p>
+              <h4>Systems other people depend on</h4>
+              <p>At USC Rocket Propulsion Lab and Gray, the stakes changed: authentication, permissions, and architecture decisions that teammates rely on daily.</p>
             </div>
           </li>
           <li>
-            <div class="g-year">Today</div>
+            <div class="g-year">Next</div>
             <div>
-              <h4>What's next</h4>
-              <p>Where I want to grow next and the problems I want to solve.</p>
+              <h4>Where I'm heading</h4>
+              <p>Deeper into systems and applied AI — building tools that quietly remove work rather than adding another interface to manage.</p>
             </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- CONTACT WINDOW [EDIT: Update links] -->
+    <!-- CONTACT -->
     <section class="window" data-app="contact" data-title="Contact" style="--w: 620px; --h: 460px; --x: 220px; --y: 200px;">
       <header class="window-titlebar">
         <div class="traffic-lights">
@@ -433,35 +486,35 @@
         <p class="window-path">~/resume/contact.txt</p>
         <h2 class="section-title">Let's talk</h2>
         <p class="section-sub">
-          I'm always happy to chat about engineering, product, or interesting problems.
+          Happy to chat about internships, side projects, or anything worth building.
         </p>
 
         <ul class="contact-list">
           <li>
             <span class="c-label">Email</span>
-            <a href="mailto:you@example.com">benjaminkim006@gmail.com</a>
+            <a href="mailto:benkim@usc.edu">benkim@usc.edu</a>
           </li>
           <li>
-            <span class="c-label">GitHub</span>
-            <a href="https://github.com/" target="_blank" rel="noopener">github.com/ibenkim</a>
+            <span class="c-label">Phone</span>
+            <a href="tel:+14084835811">(408) 483-5811</a>
           </li>
           <li>
             <span class="c-label">LinkedIn</span>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener">linkedin.com/in/ben-kim-m</a>
+            <a href="https://linkedin.com/in/ben-kim-m" target="_blank" rel="noopener">linkedin.com/in/ben-kim-m</a>
           </li>
-          <!--
           <li>
-            <span class="c-label">Blog</span>
-            <a href="#" target="_blank" rel="noopener">yourblog.dev</a>
+            <!-- [EDIT] replace with your GitHub username -->
+            <span class="c-label">GitHub</span>
+            <a href="https://github.com/" target="_blank" rel="noopener">github.com/yourname</a>
           </li>
-          -->
           <li>
+            <!-- [EDIT] drop a PDF in this folder and point the link at it -->
             <span class="c-label">Resume</span>
-            <a href="#" target="_blank" rel="noopener">Download PDF</a>
+            <a href="./resume.pdf" target="_blank" rel="noopener">Download PDF</a>
           </li>
         </ul>
 
-        <p class="contact-footer">© 2026 Ben Kim. Built with care on a macOS-style canvas.</p>
+        <p class="contact-footer">© 2026 Benjamin Kim. Built on a macOS-style canvas.</p>
       </div>
     </section>
   </main>
@@ -473,7 +526,7 @@
     <ul class="dock-list" id="dockList">
       <li class="dock-item" data-target="about" data-tooltip="About">
         <span class="dock-icon" style="--g1:#5b9cff;--g2:#0a84ff;">
-          <span class="dock-glyph">A</span>
+          <span class="dock-glyph">B</span>
         </span>
       </li>
       <li class="dock-item" data-target="skills" data-tooltip="Skills">
@@ -491,25 +544,21 @@
           <span class="dock-glyph">◆</span>
         </span>
       </li>
-      <!--
-      <li class="dock-item" data-target="publications" data-tooltip="Publications">
+      <li class="dock-item" data-target="education" data-tooltip="Education">
         <span class="dock-icon" style="--g1:#ff8a8a;--g2:#ff453a;">
-          <span class="dock-glyph">📖</span>
+          <span class="dock-glyph">🎓</span>
         </span>
       </li>
-      -->
-      <li class="dock-item" data-target="courses" data-tooltip="Lectures">
+      <li class="dock-item" data-target="teaching" data-tooltip="Teaching">
         <span class="dock-icon" style="--g1:#c79bff;--g2:#bf5af2;">
-          <span class="dock-glyph">📖</span>
+          <span class="dock-glyph">🎤</span>
         </span>
       </li>
-      <!--
       <li class="dock-item" data-target="growth" data-tooltip="Growth">
         <span class="dock-icon" style="--g1:#7bd5e0;--g2:#5ac8fa;">
           <span class="dock-glyph">↗</span>
         </span>
       </li>
-      -->
       <li class="dock-separator" aria-hidden="true"></li>
       <li class="dock-item" data-target="contact" data-tooltip="Contact">
         <span class="dock-icon" style="--g1:#e7e7eb;--g2:#9aa0a6;">
