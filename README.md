@@ -23,8 +23,7 @@ personal links (GitHub profile, project repos, resume PDF). The windows:
 - **Skills** — the stack JSON block and the four category cards.
 - **Experience** — `<li class="timeline-entry">` blocks, newest first.
 - **Projects** — `<a class="project-card">` cards.
-- **Education** — `<article class="pub-item">` entries for degrees and awards.
-- **Teaching** — items in the `<ul class="lecture-list">`.
+- **Education** — `<article class="pub-item">` entries for degrees.
 - **Growth Story** — milestones in `<ol class="growth-list">`.
 - **Contact** — the `<ul class="contact-list">` links and the resume PDF.
 
